@@ -1,0 +1,31 @@
+<apex:page controller="mycon" docType="html-5.0" action="{!CourseList}">
+   <apex:slds />
+        
+         <apex:pageBlock id="lst1" title="Course List">
+          <apex:pageBlockSection columns="1" rendered="{!lstresultsAvailable}" showHeader="false" > 
+              <apex:outputPanel id="lists">
+               <!--<apex:pageBlockTable value="{!Courses}" var="c">
+                    <apex:column >
+                        <apex:facet name="header">Course ID</apex:facet>
+                        <apex:outputLink value="/{!c.Id}">{!c.Id}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!c.Name}"/>
+                    <apex:column value="{!c.Course_Name__c}"/>
+                    <apex:column value="{!c.Course_Type__c}"/>
+                    <apex:column value="{!c.Venue__c}"/>
+                    <apex:column value="{!c.Status__c}"/>
+                </apex:pageBlockTable> -->
+                  <apex:repeat value="{!Courses}" var="c">
+                  	<tr>
+                    	<td>{!c.Name}</td>
+                        <td>{!c.Course_Name__c}</td>
+                        <td>{!c.Course_Type__c}</td>
+                        <td>{!c.Venue__c}</td>
+                        <td>{!c.Status__c}</td>
+                    </tr>
+                  </apex:repeat>
+                  
+               </apex:outputPanel>
+            </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>
